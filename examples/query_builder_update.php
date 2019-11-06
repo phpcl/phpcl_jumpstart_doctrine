@@ -4,7 +4,7 @@ $entityManager = require_once __DIR__ . '/../config/bootstrap.php';
 
 use Application\Entity\Events;
 
-$eventId = 5;
+$eventId = 152;
 
 // construct query
 try {

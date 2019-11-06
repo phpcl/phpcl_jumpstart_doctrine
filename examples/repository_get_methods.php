@@ -1,4 +1,5 @@
 <?php
+// this examples demonstrates the use of the repo "get" methods
 use Application\Entity\Users;
 use Doctrine\ORM\EntityRepository;
 
@@ -8,8 +9,4 @@ $factory  = $entityManager->getMetadataFactory();
 $metaData = $factory->getMetadataFor(Users::class);
 $repository = new EntityRepository($entityManager, $metaData);
 
-// this does a search by the 'id' field
-$entity = $repository->findOneBy(['email' =>'cstrickl234@optus.com']);
-echo "\nClass: " . get_class($entity);
-echo "\nName: " . $entity->getFullName();
-echo PHP_EOL;
+echo "\nClass: " . $repository->getClassName();
