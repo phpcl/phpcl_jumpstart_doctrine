@@ -3,6 +3,14 @@ Source Code for PHP-CL Doctrine JumpStart Course
 
 ## VM
 * Install `docker`
+  * CentOS: https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce
+  * Debian: https://docs.docker.com/install/linux/docker-ce/debian/
+  * Fedora: https://docs.docker.com/install/linux/docker-ce/fedora/
+  * Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+  * Windows: https://docs.docker.com/docker-for-windows/install/
+  * Mac: https://docs.docker.com/docker-for-mac/install/
+* Pull the latest `Linux for PHP` image
+  * See: https://hub.docker.com/r/asclinux/linuxforphp-8.1-ultimate/tags/
 * Create a volume `jumpstart`
 ```
 docker volume create jumpstart
@@ -38,7 +46,8 @@ MariaDB [(none)]>
 CREATE DATABASE `jumpstart`;
 USE `jumpstart`;
 CREATE USER 'test'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'test'@'localhost';
+GRANT ALL PRIVILEGES ON `jumpstart`.`*` TO 'test'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON `jumpstart`.`*` TO 'test'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 SOURCE /srv/jumpstart/phpcl_jumpstart_doctrine/sample_data/jumpstart.sql;
 exit

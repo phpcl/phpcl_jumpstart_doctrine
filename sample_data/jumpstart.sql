@@ -349,7 +349,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(1,'DIERDUNL9601','Ms','Dierdre','D','Dunlap','','100-831-9601','ddunlap100@ktc.com','ddunlap@facebook.com','2933 Green Tree Road','','','','Mybster','Scotland','Highland','GB','KW1',58.4564,-3.4261,'ddunlap','ddunlap@skype.com','$2y$10$tM/Qi/cy6u7K3aPvpwRTWue9ySSxVPSeN7dB05NG0e1P7VWbNoI3q','F','1975-03-11','N'),
+(1,'ANDRCAYA0001','Mr','Andrew','S','Caya','','100-831-9601','andrew.caya@etista.com','andy@linkedin.com','2933 Green Tree Road','','','','Quebec City','Quebec','Quebec','CA','A1A 1A1',58.4564,-3.4261,'acaya','acaya@skype.com','$2y$10$tM/Qi/cy6u7K3aPvpwRTWue9ySSxVPSeN7dB05NG0e1P7VWbNoI3q','M','1975-03-11','N'),
 (2,'EDWASTUA6184','Mr','Edwardo','C','Stuart','','101-428-6184','estuart101@centurylink.com','estuart@skype.com','6029 Short Gulch Road','','','','Sauðárkróki','','','IS','550',65.7461,-19.6394,'estuart','estuart@linkedin.com','$2y$10$PQZcjza9/txFQyuupJjXjOpuZN8cigZlVYIeu5iKIT4lx5tL1MUIS','M','1975-12-27','N'),
 (3,'KAMAQUIN4510','','Kamala','','Quintero','','102-820-4510','kquinter102@safaricom.com','','6690 Little Mountain Street','','','E5','Bedkuvadoor','Vyara','Surat','IN','394360',21.7084,73.5759,'kquinter','','$2y$10$TD8ogtpCSRh3rYuhgOV5ZuAgVuDSoz61d2qdAN2zdgYhLSJ6z.MFi','F','1953-11-20','N'),
 (4,'MAISKAUR1767','Ms','Maisha','V','Kaur','','103-219-1767','mkaur103@centurylink.com','mkaur@google.com','682 Blue Bend Way','','','','Годылево','Bykhov','Bykhov','BY','213332',53.6084,30.3696,'mkaur','mkaur@twitter.com','$2y$10$276yrMxMwrf1QVbN9wOwT.gKU4jL3.QtD2RczsazT.HvW/UFkSzkO','F','1947-06-06','N'),
