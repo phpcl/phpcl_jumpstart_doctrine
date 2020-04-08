@@ -1,0 +1,25 @@
+version: "3"
+services:
+  phpcl-jumpstart-doctrine:
+    container_name: phpcl_jumpstart_doctrine
+    hostname: jumpstart-doctrine
+    image: asclinux/linuxforphp-8.2-ultimate:7.4-nts
+    volumes:
+     - ".:/srv/jumpstart"
+     - ".:/srv/www/jumpstart"
+    ports:
+     - "8181:80"
+     - "10443:443"
+     - "2222:22"
+    build: ./docker
+    restart: always
+    command: lfphp
+    networks:
+      app_net:
+        ipv4_address: 172.16.0.99
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.0.0/24"

@@ -10,7 +10,12 @@ Source Code for PHP-CL Doctrine JumpStart Course
   * Windows: https://docs.docker.com/docker-for-windows/install/
   * Mac: https://docs.docker.com/docker-for-mac/install/
 * Pull the latest `Linux for PHP` image
-  * See: https://hub.docker.com/r/asclinux/linuxforphp-8.1-ultimate/tags/
+  * See: https://hub.docker.com/r/asclinux/linuxforphp-8.2-ultimate/tags/
+  * Example:
+```
+docker pull asclinux/linuxforphp-8.2-ultimate:7.4-nts
+```
+* Make a note of the image and tag (hereafter referred to as `IMAGE` and `TAG`)
 * Create a volume `jumpstart`
 ```
 docker volume create jumpstart
@@ -20,9 +25,9 @@ docker volume create jumpstart
 docker volume ls
 docker volume inspect jumpstart
 ```
-* Run PHP for Linux image and mount the volume
+* Run PHP for Linux image and mount the volume.  Replace `IMAGE` and `TAG` with the values recorded above.
 ```
-docker run -dit --restart=always --name phpcl_jumpstart_doctrine -v ${PWD}/:/srv/www -p 8181:80 -p 10443:443 -p 2222:22 --mount source=jumpstart,target=/srv/jumpstart asclinux/linuxforphp-8.1-ultimate:7.3-nts lfphp
+docker run -dit --restart=always --name phpcl_jumpstart_doctrine -v ${PWD}/:/srv/www -p 8181:80 -p 10443:443 -p 2222:22 --mount source=jumpstart,target=/srv/jumpstart IMAGE:TAG lfphp
 ```
 * Get container ID
 ```
@@ -46,8 +51,10 @@ MariaDB [(none)]>
 CREATE DATABASE `jumpstart`;
 USE `jumpstart`;
 CREATE USER 'test'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON `jumpstart`.`*` TO 'test'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON `jumpstart`.`*` TO 'test'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON `jumpstart`.`events` TO 'test'@'localhost';
+GRANT ALL PRIVILEGES ON `jumpstart`.`hotels` TO 'test'@'localhost';
+GRANT ALL PRIVILEGES ON `jumpstart`.`signup` TO 'test'@'localhost';
+GRANT ALL PRIVILEGES ON `jumpstart`.`users` TO 'test'@'localhost';
 FLUSH PRIVILEGES;
 SOURCE /srv/jumpstart/phpcl_jumpstart_doctrine/sample_data/jumpstart.sql;
 exit
